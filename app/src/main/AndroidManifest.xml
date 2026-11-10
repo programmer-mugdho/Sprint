@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:name=".SprintApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApplication">
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.MyApplication" />
+
+        <activity
+            android:name=".ui.ChapterListActivity"
+            android:exported="false"
+            android:label="Chapters"
+            android:parentActivityName=".MainActivity" />
+
+        <activity
+            android:name=".ui.PracticeActivity"
+            android:exported="false"
+            android:label="Chapter Practice"
+            android:parentActivityName=".ui.ChapterListActivity" />
+
+        <activity
+            android:name=".ui.MockTestActivity"
+            android:exported="false"
+            android:label="Timed Mock Test" />
+
+        <activity
+            android:name=".ui.TestResultActivity"
+            android:exported="false"
+            android:label="Test Analysis" />
+
+        <activity
+            android:name=".ui.WeakReviewActivity"
+            android:exported="false"
+            android:label="Revision Queue"
+            android:parentActivityName=".MainActivity" />
+
+        <activity
+            android:name=".ui.LeaderboardActivity"
+            android:exported="false"
+            android:label="Rankings &amp; Sync"
+            android:parentActivityName=".MainActivity" />
+
+        <activity
+            android:name=".ui.LoginActivity"
+            android:exported="true"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ui.SignupActivity"
+            android:exported="false"
+            android:label="Create Account"
+            android:parentActivityName=".ui.LoginActivity" />
+
+        <activity
+            android:name=".ui.ProfileActivity"
+            android:exported="false"
+            android:label="Student Profile"
+            android:parentActivityName=".MainActivity" />
+
+        <activity
+            android:name=".ui.EditProfileActivity"
+            android:exported="false"
+            android:label="Edit Profile"
+            android:parentActivityName=".ui.ProfileActivity" />
+
+        <!-- BroadcastReceiver for Daily Study Reminders (Topic 10) -->
+        <receiver
+            android:name=".receiver.DailyReminderReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="com.aistudio.sprint.ACTION_DAILY_REMINDER" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Service for Background Progress Sync & Calculations (Topic 10) -->
+        <service
+            android:name=".service.StudySyncService"
+            android:exported="false" />
+    </application>
+
+</manifest>

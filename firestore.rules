@@ -1,0 +1,41 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    function isValidUser(data) {
+      return data.size() >= 4
+        && ('userId' in data) && data.userId is string && data.userId == request.auth.uid
+        && ('name' in data) && data.name is string && data.name.size() > 0
+        && ('email' in data) && data.email is string
+        && ('targetUniversity' in data) && data.targetUniversity is string;
+    }
+
+    function isValidExamResult(data) {
+      return data.size() >= 8
+        && ('userId' in data) && data.userId is string && data.userId == request.auth.uid
+        && ('userName' in data) && data.userName is string
+        && ('scoreAchieved' in data) && data.scoreAchieved is number
+        && ('totalQuestions' in data) && data.totalQuestions is number;
+    }
+
+    match /users/{userId} {
+      allow read: if isAuthenticated();
+      allow create, update: if isOwner(userId) && isValidUser(request.resource.data);
+      allow delete: if isOwner(userId);
+    }
+
+    match /exam_results/{resultId} {
+      allow read: if isAuthenticated();
+      allow create: if isAuthenticated() && isValidExamResult(request.resource.data);
+      allow update, delete: if isAuthenticated() && resource.data.userId == request.auth.uid;
+    }
+  }
+}

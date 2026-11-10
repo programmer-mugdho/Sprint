@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardBackgroundColor="@color/card_surface"
+    app:cardCornerRadius="14dp"
+    app:cardElevation="1dp"
+    app:strokeColor="@color/border_subtle"
+    app:strokeWidth="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_review_question_idx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:text="Question 1 • Physics" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <!-- Time spent on this question -->
+            <TextView
+                android:id="@+id/tv_review_time_spent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_chip_rounded"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="3dp"
+                android:textColor="@color/primary"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                tools:text="Time: 24s" />
+
+            <!-- Result Mark Badge -->
+            <TextView
+                android:id="@+id/tv_review_mark_badge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:background="@drawable/bg_chip_rounded"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="3dp"
+                android:textColor="@color/success_green"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                tools:text="+1.00 Mark" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_review_question_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:text="A projectile is fired at an angle of 30° to the horizontal with an initial speed of 40 m/s..." />
+
+        <!-- User Answer vs Correct Answer -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_review_user_answer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_primary"
+                android:textSize="13sp"
+                tools:text="Your Answer: B. 4.08 s (Correct)" />
+
+            <TextView
+                android:id="@+id/tv_review_correct_answer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/success_green"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                tools:text="Correct Answer: B. 4.08 s" />
+        </LinearLayout>
+
+        <!-- Detailed Explanation -->
+        <TextView
+            android:id="@+id/tv_review_explanation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_chip_rounded"
+            android:lineSpacingExtra="2dp"
+            android:padding="10dp"
+            android:textColor="@color/text_primary"
+            android:textSize="12sp"
+            tools:text="Explanation: T = (2 * u * sin θ) / g = (80 * 0.5) / 9.8 = 40 / 9.8 ≈ 4.08 seconds." />
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

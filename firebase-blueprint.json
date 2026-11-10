@@ -1,0 +1,37 @@
+{
+  "entities": {
+    "User": {
+      "collection": "users",
+      "fields": {
+        "userId": { "type": "string", "required": true },
+        "name": { "type": "string", "required": true },
+        "email": { "type": "string", "required": true },
+        "targetUniversity": { "type": "string", "required": true },
+        "avatarBadge": { "type": "string", "required": true },
+        "bestScore": { "type": "number", "required": false },
+        "totalScore": { "type": "number", "required": false },
+        "accuracyPercent": { "type": "number", "required": false },
+        "testsTaken": { "type": "number", "required": false },
+        "createdAt": { "type": "timestamp", "required": false },
+        "updatedAt": { "type": "timestamp", "required": false }
+      }
+    },
+    "ExamResult": {
+      "collection": "exam_results",
+      "fields": {
+        "userId": { "type": "string", "required": true },
+        "userName": { "type": "string", "required": true },
+        "targetUniversity": { "type": "string", "required": true },
+        "testTitle": { "type": "string", "required": true },
+        "scoreAchieved": { "type": "number", "required": true },
+        "totalQuestions": { "type": "number", "required": true },
+        "correctCount": { "type": "number", "required": true },
+        "wrongCount": { "type": "number", "required": true },
+        "skippedCount": { "type": "number", "required": true },
+        "accuracyPercent": { "type": "number", "required": true },
+        "totalTimeSeconds": { "type": "number", "required": true },
+        "timestamp": { "type": "timestamp", "required": true }
+      }
+    }
+  }
+}

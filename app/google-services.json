@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "972644546486",
+    "project_id": "test-project-mugdho",
+    "storage_bucket": "test-project-mugdho.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:972644546486:android:88e5fa0370200203383317",
+        "android_client_info": {
+          "package_name": "com.aistudio.sprint.admprep"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "972644546486-iqjve2jmdol1g6m1lhg5om8b83qjk8c3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aistudio.sprint.admprep",
+            "certificate_hash": "13b8071736cf6a219155e36ed53b42d415d149a2"
+          }
+        },
+        {
+          "client_id": "972644546486-b58n8umemjuge3hjernkj2l0vu0hoo0t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD54-gSxx6DuhYRnMXUdkZaFoPXoaWQAWg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "972644546486-b58n8umemjuge3hjernkj2l0vu0hoo0t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
